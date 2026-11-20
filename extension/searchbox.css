@@ -1,0 +1,62 @@
+/* Keep the header search box looking the same when it has focus.
+   On focus YouTube re-renders the box in a wider, taller "unified" layout
+   with a spyglass inside and the Search button moved. These rules hold
+   the pill at its unfocused size, place and colors. Suggestions still
+   open below it.
+
+   The two var(--t...) names are YouTube's generated tokens for the
+   light-theme pill border and background, copied from the unfocused
+   .ytSearchboxComponentInputBox rules. The fallbacks are those light
+   values. Dark theme uses the literal colors from
+   .ytSearchboxComponentInputBoxDark. */
+ytd-masthead[unified-searchbox-open] #center {
+  align-self: flex-start !important;
+  margin-top: 4px !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused {
+  height: auto !important;
+  margin: 0 0 0 40px !important;
+  padding: 0 4px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentInputWrapper {
+  padding: 0 !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentInputContainer {
+  box-sizing: border-box !important;
+  flex: none !important;
+  height: 48px !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 0 4px 0 0 !important;
+  gap: 4px !important;
+  align-items: center !important;
+  border: 1px solid var(--tf3fc855af2285f5f, rgb(198, 198, 198)) !important;
+  border-radius: 40px !important;
+  background: var(--t518e925f61bdcb91, rgb(255, 255, 255)) !important;
+  transition: none !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused.ytSearchboxComponentHostDark .ytSearchboxComponentInputContainer {
+  border-color: rgb(48, 48, 48) !important;
+  background: rgb(18, 18, 18) !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentInputBox {
+  align-self: stretch !important;
+  padding: 0 0 0 16px !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentActions {
+  align-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentActions button-view-model {
+  padding: 0 !important;
+}
+ytd-masthead yt-searchbox .ytSearchboxComponentInnerSearchIcon {
+  display: none !important;
+}

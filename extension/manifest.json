@@ -17,7 +17,8 @@
         "https://youtube.com/*"
       ],
       "css": [
-        "hide-shorts.css"
+        "hide-shorts.css",
+        "searchbox.css"
       ],
       "js": [
         "navigation.js",
