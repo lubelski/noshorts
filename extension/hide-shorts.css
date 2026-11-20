@@ -14,6 +14,13 @@ ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
 ytd-mini-guide-entry-renderer:has(a[aria-label="Shorts"]),
 ytd-guide-entry-renderer:has(a[href^="/shorts?"]),
 ytd-mini-guide-entry-renderer:has(a[href^="/shorts?"]),
+/* Hide seasonal masthead artwork, not the standard logo or its link. */
+ytd-masthead ytd-yoodle-renderer,
+ytd-masthead #yoodle,
+ytd-masthead img.yt-logo-doodle,
+/* Ask controls in the header and watch action bar (never match by position). */
+ytd-masthead :is(button, [role="button"]):is([aria-label="Ask YouTube" i], [title="Ask YouTube" i]),
+ytd-watch-metadata #actions :is(button, [role="button"]):is([aria-label="Ask" i], [aria-label^="Ask about this video" i], [aria-label="Ask YouTube" i], [title="Ask" i]),
 [data-noshorts-relevant],
 ytd-reel-shelf-renderer,
 ytd-reel-item-renderer,

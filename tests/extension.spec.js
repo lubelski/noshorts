@@ -14,6 +14,20 @@ test.beforeAll(async () => {
 });
 test.afterAll(async () => { await context?.close(); });
 
+test('hides masthead doodle and Ask controls without hiding neighboring actions', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/watch?v=regular');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-masthead><a href="/">YouTube</a><ytd-yoodle-renderer>Artwork</ytd-yoodle-renderer>
+    <button aria-label="Ask YouTube">Ask YouTube</button><button>Search</button></ytd-masthead>
+    <ytd-watch-metadata><div id="actions"><button>Share</button><button aria-label="Ask about this video">✦</button><button>Save</button></div></ytd-watch-metadata>`));
+  for (const selector of ['ytd-yoodle-renderer', '[aria-label="Ask YouTube"]', '[aria-label="Ask about this video"]'])
+    await expect(page.locator(selector)).toBeHidden();
+  for (const text of ['YouTube', 'Search', 'Share', 'Save'])
+    await expect(page.getByText(text, { exact: true })).toBeVisible();
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],
