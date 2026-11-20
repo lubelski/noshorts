@@ -8,13 +8,20 @@
     queued = false;
     // Clear previous markers first: YouTube can recycle DOM across SPA routes.
     const hidden = new Set();
-    if (/^\/feed\/subscriptions\/?$/.test(location.pathname)) {
-      for (const shelf of document.querySelectorAll(shelves)) {
-        // Never search all shelf text: a video title might contain these words.
-        const heading = shelf.querySelector("#title, h2, [role='heading']");
-        if (heading?.textContent.trim().replace(/\s+/g, " ").toLowerCase() === "most relevant") {
-          hidden.add(shelf.closest("ytd-rich-section-renderer") || shelf);
-        }
+    const onSubscriptionsPath = /^\/feed\/subscriptions\/?$/.test(location.pathname);
+    for (const shelf of document.querySelectorAll(shelves)) {
+      // Prefer the page the shelf lives in over the URL. During SPA navigation
+      // YouTube updates the URL before it swaps pages, and the old
+      // Subscriptions page stays in the DOM (hidden) afterward.
+      const page = shelf.closest("ytd-browse");
+      const onSubscriptions = page
+        ? page.getAttribute("page-subtype") === "subscriptions"
+        : onSubscriptionsPath;
+      if (!onSubscriptions) continue;
+      // Never search all shelf text: a video title might contain these words.
+      const heading = shelf.querySelector("#title, h2, [role='heading']");
+      if (heading?.textContent.trim().replace(/\s+/g, " ").toLowerCase() === "most relevant") {
+        hidden.add(shelf.closest("ytd-rich-section-renderer") || shelf);
       }
     }
     for (const element of document.querySelectorAll("[" + marker + "]")) {

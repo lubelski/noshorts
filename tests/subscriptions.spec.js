@@ -22,11 +22,13 @@ test('sidebar and relevance shelf are hidden without touching the chronological 
       <ytd-guide-entry-renderer id="subs"><a href="/feed/subscriptions">Subscriptions</a></ytd-guide-entry-renderer>
       <ytd-rich-section-renderer id="relevant"><ytd-rich-shelf-renderer><h2 id="title">Most relevant</h2><p>Suggested video</p><button>Show more</button></ytd-rich-shelf-renderer></ytd-rich-section-renderer>
       <ytd-rich-item-renderer id="latest">Latest video</ytd-rich-item-renderer>
-      <ytd-shelf-renderer id="other"><h2>Latest</h2><p>Most relevant</p></ytd-shelf-renderer>`,
+      <ytd-shelf-renderer id="other"><h2>Latest</h2><p>Most relevant</p></ytd-shelf-renderer>
+      <ytd-browse page-subtype="subscriptions"><ytd-rich-section-renderer id="page-relevant"><ytd-rich-shelf-renderer><h2 id="title">Most relevant</h2></ytd-rich-shelf-renderer></ytd-rich-section-renderer></ytd-browse>
+      <ytd-browse page-subtype="trending"><ytd-rich-shelf-renderer id="trending-relevant"><h2 id="title">Most relevant</h2></ytd-rich-shelf-renderer></ytd-browse>`,
     }));
     const page = await context.newPage();
     await page.goto('https://www.youtube.com/feed/subscriptions');
-    for (const id of ['home', 'mini', 'relevant', 'shorts-title', 'shorts-label', 'shorts-text', 'shorts-mini', 'shorts-query']) await expect(page.locator('#' + id)).toBeHidden();
+    for (const id of ['home', 'mini', 'relevant', 'page-relevant', 'shorts-title', 'shorts-label', 'shorts-text', 'shorts-mini', 'shorts-query']) await expect(page.locator('#' + id)).toBeHidden();
     for (const id of ['logo', 'subs', 'latest', 'other', 'channel']) await expect(page.locator('#' + id)).toBeVisible();
     await page.evaluate(() => {
       document.body.insertAdjacentHTML('beforeend', '<grid-shelf-view-model id="late"><h2>Most relevant</h2><p>Late shelf</p></grid-shelf-view-model>');
@@ -39,6 +41,9 @@ test('sidebar and relevance shelf are hidden without touching the chronological 
       document.dispatchEvent(new Event('yt-navigate-finish'));
     });
     await expect(page.locator('#relevant')).toBeVisible();
+    // The Subscriptions page itself stays hidden while the URL moves ahead of it.
+    await expect(page.locator('#page-relevant')).toBeHidden();
+    await expect(page.locator('#trending-relevant')).toBeVisible();
     await page.evaluate(() => {
       history.pushState({}, '', '/feed/subscriptions');
       document.dispatchEvent(new Event('yt-navigate-finish'));
