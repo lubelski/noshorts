@@ -21,7 +21,9 @@ ytd-masthead img.yt-logo-doodle,
 /* Premium members get a wider logo whose wordmark spells "Premium".
    Hide only those letters; the play icon and standard logo stay. */
 ytd-topbar-logo-renderer svg[viewBox="0 0 101 20"] [id^="youtube-paths"],
-/* Create (upload/go live) button in the header. */
+/* Header buttons: Create (upload/go live), notifications bell, voice search. */
+ytd-masthead #buttons > ytd-notification-topbar-button-renderer,
+ytd-masthead #voice-search-button,
 ytd-masthead #buttons > ytd-button-renderer:has(button[aria-label="Create" i]),
 /* Ask controls in the header and watch action bar (never match by position). */
 ytd-masthead :is(button, [role="button"]):is([aria-label="Ask YouTube" i], [title="Ask YouTube" i]),

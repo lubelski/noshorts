@@ -55,16 +55,17 @@ test('video cards have no hover background panel', async () => {
   await page.close();
 });
 
-test('hides the masthead Create button but keeps Notifications', async () => {
+test('hides the masthead Create, Notifications, and voice buttons but keeps the account menu', async () => {
   const page = await context.newPage();
   await page.goto('https://www.youtube.com/feed/subscriptions');
   await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
     <ytd-masthead><div id="buttons">
       <ytd-button-renderer id="create"><button aria-label="Create">Create</button></ytd-button-renderer>
-      <ytd-notification-topbar-button-renderer><button aria-label="Notifications">Bell</button></ytd-notification-topbar-button-renderer>
-    </div></ytd-masthead>`));
-  await expect(page.locator('#create')).toBeHidden();
-  await expect(page.getByText('Bell', { exact: true })).toBeVisible();
+      <ytd-notification-topbar-button-renderer id="bell"><button aria-label="Notifications">Bell</button></ytd-notification-topbar-button-renderer>
+      <ytd-topbar-menu-button-renderer><button aria-label="Account menu">Avatar</button></ytd-topbar-menu-button-renderer>
+    </div><div id="voice-search-button"><button aria-label="Search with your voice">Mic</button></div></ytd-masthead>`));
+  for (const id of ['create', 'bell', 'voice-search-button']) await expect(page.locator('#' + id)).toBeHidden();
+  await expect(page.getByText('Avatar', { exact: true })).toBeVisible();
   await page.close();
 });
 
