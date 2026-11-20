@@ -88,6 +88,43 @@ test('focused header search box keeps its unfocused size and drops the spyglass'
   await page.close();
 });
 
+test('watch page keeps only the Related chip and selects it', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/watch?v=regular');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-watch-flexy><div id="related"><ytd-watch-next-secondary-results-renderer>
+      <yt-chip-cloud-chip-renderer id="all" selected><button>All</button></yt-chip-cloud-chip-renderer>
+      <yt-chip-cloud-chip-renderer id="rel"><button onclick="all.removeAttribute('selected'); rel.setAttribute('selected', '')">Related</button></yt-chip-cloud-chip-renderer>
+      <yt-chip-cloud-chip-renderer id="watched"><button>Watched</button></yt-chip-cloud-chip-renderer>
+      <p>Video</p>
+    </ytd-watch-next-secondary-results-renderer></div></ytd-watch-flexy>`));
+  for (const id of ['all', 'watched']) await expect(page.locator('#' + id)).toBeHidden();
+  await expect(page.locator('#rel')).toBeVisible();
+  await expect(page.locator('#rel')).toHaveAttribute('selected', '');
+  // Two-column layout: no toggle, list stays visible.
+  await expect(page.locator('.noshorts-related-toggle')).toBeHidden();
+  await expect(page.getByText('Video', { exact: true })).toBeVisible();
+  await page.close();
+});
+
+test('one-column watch page collapses related videos behind a toggle', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/watch?v=regular');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-watch-flexy is-single-column><div id="related"><ytd-watch-next-secondary-results-renderer>
+      <p>Video</p>
+    </ytd-watch-next-secondary-results-renderer></div></ytd-watch-flexy>`));
+  const toggle = page.locator('.noshorts-related-toggle');
+  await expect(toggle).toHaveText('Show related videos');
+  await expect(page.getByText('Video', { exact: true })).toBeHidden();
+  await toggle.click();
+  await expect(page.getByText('Video', { exact: true })).toBeVisible();
+  await expect(toggle).toHaveText('Hide related videos');
+  await toggle.click();
+  await expect(page.getByText('Video', { exact: true })).toBeHidden();
+  await page.close();
+});
+
 test('Premium logo link shrinks to the play icon', async () => {
   const page = await context.newPage();
   await page.goto('https://www.youtube.com/feed/subscriptions');

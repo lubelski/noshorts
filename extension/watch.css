@@ -1,0 +1,36 @@
+/* Watch page related videos. See watch.js. */
+[data-noshorts-hidden-chip] {
+  display: none !important;
+}
+
+/* One-column layout: related videos stay collapsed until asked for. */
+ytd-watch-flexy[is-single-column] #related:not([data-noshorts-related-open]) > ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+ytd-watch-flexy:not([is-single-column]) .noshorts-related-toggle {
+  display: none !important;
+}
+.noshorts-related-toggle {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 36px;
+  margin: 12px 0;
+  padding: 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  background: transparent;
+  color: #0f0f0f;
+  font: 500 14px/36px Roboto, Arial, sans-serif;
+  cursor: pointer;
+}
+.noshorts-related-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+html[dark] .noshorts-related-toggle {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f1f1f1;
+}
+html[dark] .noshorts-related-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
