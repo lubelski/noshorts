@@ -25,7 +25,9 @@ ytd-topbar-logo-renderer svg[viewBox="0 0 101 20"] [id^="youtube-paths"],
 ytd-masthead #buttons > ytd-notification-topbar-button-renderer,
 ytd-masthead #voice-search-button,
 ytd-masthead #buttons > ytd-button-renderer:has(button[aria-label="Create" i]),
-/* Ask controls in the header and watch action bar (never match by position). */
+/* Ask controls in the header, watch action bar, and fullscreen player
+   quick actions (never match by position). */
+yt-player-quick-action-buttons > :has(> button[aria-label="Ask" i]),
 ytd-masthead :is(button, [role="button"]):is([aria-label="Ask YouTube" i], [title="Ask YouTube" i]),
 ytd-watch-metadata #actions :is(button, [role="button"]):is([aria-label="Ask" i], [aria-label^="Ask about this video" i], [aria-label="Ask YouTube" i], [title="Ask" i]),
 [data-noshorts-relevant],
