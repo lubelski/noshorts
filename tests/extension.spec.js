@@ -43,15 +43,15 @@ test('hides the Premium wordmark but keeps the logo icon and standard wordmark',
   await page.close();
 });
 
-test('video card hover highlight does not scale', async () => {
+test('video cards have no hover background panel', async () => {
   const page = await context.newPage();
   await page.goto('https://www.youtube.com/feed/subscriptions');
   await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
     <style>.ytSpecTouchFeedbackShapeHoverEffect { transform: scale(0.9); }</style>
     <yt-lockup-view-model><div class="ytSpecTouchFeedbackShapeHoverEffect" id="card">x</div></yt-lockup-view-model>
     <div class="ytSpecTouchFeedbackShapeHoverEffect" id="other">y</div>`));
-  await expect(page.locator('#card')).toHaveCSS('transform', 'none');
-  await expect(page.locator('#other')).not.toHaveCSS('transform', 'none');
+  await expect(page.locator('#card')).toBeHidden();
+  await expect(page.locator('#other')).toBeVisible();
   await page.close();
 });
 

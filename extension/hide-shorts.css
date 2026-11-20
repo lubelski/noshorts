@@ -48,7 +48,8 @@ yt-tab-shape:has(a[href$="/shorts/"]) {
   display: none !important;
 }
 
-/* Video cards: keep the hover highlight but drop its grow-in scale. */
+/* Video cards: no hover background panel. The thumbnail's own hover
+   preview is enough. */
 yt-lockup-view-model .ytSpecTouchFeedbackShapeHoverEffect {
-  transform: none !important;
+  display: none !important;
 }
