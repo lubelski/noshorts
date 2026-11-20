@@ -55,3 +55,19 @@ yt-tab-shape:has(a[href$="/shorts/"]) {
 yt-lockup-view-model .ytSpecTouchFeedbackShapeHoverEffect {
   display: none !important;
 }
+
+/* Premium logo: with the wordmark hidden, shrink the link to the play icon
+   so the empty space is not clickable. */
+ytd-topbar-logo-renderer #logo-icon:has(svg[viewBox="0 0 101 20"]) {
+  width: auto !important;
+}
+ytd-topbar-logo-renderer #logo-icon .yt-icon-shape:has(> * > svg[viewBox="0 0 101 20"], > svg[viewBox="0 0 101 20"]) {
+  width: 29px !important;
+  overflow: hidden !important;
+}
+ytd-topbar-logo-renderer #logo-icon svg[viewBox="0 0 101 20"] {
+  flex: none !important;
+  width: 101px !important;
+  min-width: 101px !important;
+  height: 20px !important;
+}

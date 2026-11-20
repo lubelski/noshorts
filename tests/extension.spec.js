@@ -88,6 +88,19 @@ test('focused header search box keeps its unfocused size and drops the spyglass'
   await page.close();
 });
 
+test('Premium logo link shrinks to the play icon', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/feed/subscriptions');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-topbar-logo-renderer><a id="logo" href="/" style="display:inline-flex">
+      <span id="logo-icon" style="display:inline-flex;width:131px"><span class="yt-icon-shape" style="display:flex"><div>
+        <svg viewBox="0 0 101 20" width="101" height="20"><rect width="29" height="20" fill="red"/></svg>
+      </div></span></span></a></ytd-topbar-logo-renderer>`));
+  const width = await page.locator('#logo').evaluate(a => a.getBoundingClientRect().width);
+  expect(width).toBeLessThan(40);
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],
