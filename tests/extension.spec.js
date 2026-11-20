@@ -55,6 +55,19 @@ test('video card hover highlight does not scale', async () => {
   await page.close();
 });
 
+test('hides the masthead Create button but keeps Notifications', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/feed/subscriptions');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-masthead><div id="buttons">
+      <ytd-button-renderer id="create"><button aria-label="Create">Create</button></ytd-button-renderer>
+      <ytd-notification-topbar-button-renderer><button aria-label="Notifications">Bell</button></ytd-notification-topbar-button-renderer>
+    </div></ytd-masthead>`));
+  await expect(page.locator('#create')).toBeHidden();
+  await expect(page.getByText('Bell', { exact: true })).toBeVisible();
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],
