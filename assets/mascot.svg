@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>NoShorts — a cheerful pig in a teal jacket</title>
+<rect width="512" height="512" rx="120" fill="#fff0d7"/>
+<g stroke="#302c3b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<!-- Bare little legs: jacket, but no shorts. -->
+<path d="M203 377 193 438Q207 455 236 441L247 381M268 381 276 441Q302 455 320 437L307 374" fill="#f6a6a4"/>
+<path d="M191 437Q211 426 237 438L236 452H190ZM275 438Q301 426 322 437L324 452H276Z" fill="#302c3b"/>
+<path d="M191 258Q139 271 123 342L158 357 189 313M320 258Q367 272 387 340L354 358 323 313" fill="#287f82"/>
+<path d="M123 337Q97 343 113 366 130 381 152 356M387 337Q411 341 399 363 384 382 360 357" fill="#f6a6a4"/>
+<path d="M192 253Q253 235 320 253L339 386Q292 411 254 386 212 411 174 385Z" fill="#287f82"/>
+<path d="M219 255 254 321 288 255" fill="#fff0d7"/>
+<path d="m207 252-15 40 34 4-9 27 37 60 39-60-9-27 34-4-17-40" fill="none"/>
+<!-- Large ears, round face, and a distinctive curled forelock. -->
+<path d="M164 160Q112 83 151 74 198 77 214 129M302 125Q335 64 366 80 397 106 346 167" fill="#f6a6a4"/>
+<path d="m163 113 22 37m156-34-18 36" fill="none" stroke="#d87783"/>
+<ellipse cx="255" cy="191" rx="111" ry="96" fill="#f6a6a4"/>
+<path d="M239 102Q224 67 253 65 283 64 273 88 267 100 257 87" fill="#f6a6a4"/>
+<ellipse cx="218" cy="179" rx="17" ry="25" fill="#fffaf0" stroke="none"/>
+<ellipse cx="292" cy="179" rx="17" ry="25" fill="#fffaf0" stroke="none"/>
+<ellipse cx="223" cy="184" rx="8" ry="15" fill="#302c3b" stroke="none"/>
+<ellipse cx="287" cy="184" rx="8" ry="15" fill="#302c3b" stroke="none"/>
+<path d="M212 229Q251 269 299 228" fill="#fffaf0"/>
+<ellipse cx="255" cy="212" rx="39" ry="26" fill="#f8b8b0" stroke-width="9"/>
+<path d="M241 209v8m28-8v8" stroke-width="8"/>
+<path d="m199 148 20-5m73 0 20 5" fill="none" stroke-width="8"/>
+<circle cx="254" cy="354" r="6" fill="#f6cd70" stroke="none"/>
+</g></svg>
