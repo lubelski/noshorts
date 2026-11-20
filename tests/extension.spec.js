@@ -69,6 +69,25 @@ test('hides the masthead Create, Notifications, and voice buttons but keeps the 
   await page.close();
 });
 
+test('focused header search box keeps its unfocused size and drops the spyglass', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/feed/subscriptions');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <style>.ytSearchboxComponentInputContainerIsFocused { height: 100px; border-radius: 24px; }</style>
+    <ytd-masthead unified-searchbox-open><div id="center">
+      <yt-searchbox class="ytSearchboxComponentHost ytSearchboxComponentHostIsFocused ytSearchboxComponentHostDark">
+        <div class="ytSearchboxComponentInputWrapper"><div id="pill" class="ytSearchboxComponentInputContainer ytSearchboxComponentInputContainerIsFocused">
+          <div id="spyglass" class="ytSearchboxComponentInnerSearchIcon">Q</div>
+          <div class="ytSearchboxComponentInputBox"><textarea></textarea></div>
+        </div></div>
+      </yt-searchbox></div></ytd-masthead>`));
+  await expect(page.locator('#spyglass')).toBeHidden();
+  await expect(page.locator('#pill')).toHaveCSS('height', '48px');
+  await expect(page.locator('#pill')).toHaveCSS('border-radius', '40px');
+  await expect(page.locator('#pill')).toHaveCSS('background-color', 'rgb(18, 18, 18)');
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],
