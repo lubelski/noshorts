@@ -28,6 +28,21 @@ test('hides masthead doodle and Ask controls without hiding neighboring actions'
   await page.close();
 });
 
+test('hides the Premium wordmark but keeps the logo icon and standard wordmark', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/feed/subscriptions');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-topbar-logo-renderer id="premium"><svg viewBox="0 0 101 20" width="101" height="20">
+      <g id="icon"><rect width="29" height="20" fill="red"/></g>
+      <g id="youtube-paths_yt9"><rect x="32" width="68" height="20"/></g></svg></ytd-topbar-logo-renderer>
+    <ytd-topbar-logo-renderer id="standard"><svg viewBox="0 0 93 20" width="93" height="20">
+      <g id="youtube-paths_yt5"><rect x="32" width="60" height="20"/></g></svg></ytd-topbar-logo-renderer>`));
+  await expect(page.locator('#premium [id^="youtube-paths"]')).toBeHidden();
+  await expect(page.locator('#premium #icon')).toBeVisible();
+  await expect(page.locator('#standard [id^="youtube-paths"]')).toBeVisible();
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],

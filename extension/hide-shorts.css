@@ -18,6 +18,9 @@ ytd-mini-guide-entry-renderer:has(a[href^="/shorts?"]),
 ytd-masthead ytd-yoodle-renderer,
 ytd-masthead #yoodle,
 ytd-masthead img.yt-logo-doodle,
+/* Premium members get a wider logo whose wordmark spells "Premium".
+   Hide only those letters; the play icon and standard logo stay. */
+ytd-topbar-logo-renderer svg[viewBox="0 0 101 20"] [id^="youtube-paths"],
 /* Ask controls in the header and watch action bar (never match by position). */
 ytd-masthead :is(button, [role="button"]):is([aria-label="Ask YouTube" i], [title="Ask YouTube" i]),
 ytd-watch-metadata #actions :is(button, [role="button"]):is([aria-label="Ask" i], [aria-label^="Ask about this video" i], [aria-label="Ask YouTube" i], [title="Ask" i]),
