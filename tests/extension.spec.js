@@ -20,7 +20,10 @@ test('hides masthead doodle and Ask controls without hiding neighboring actions'
   await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
     <ytd-masthead><a href="/">YouTube</a><ytd-yoodle-renderer>Artwork</ytd-yoodle-renderer>
     <button aria-label="Ask YouTube">Ask YouTube</button><button>Search</button></ytd-masthead>
-    <ytd-watch-metadata><div id="actions"><button>Share</button><button aria-label="Ask about this video">✦</button><button>Save</button></div></ytd-watch-metadata>`));
+    <ytd-watch-metadata><div id="actions"><button>Share</button><button aria-label="Ask about this video">✦</button><button>Save</button></div></ytd-watch-metadata>
+    <yt-player-quick-action-buttons><button-view-model><button aria-label="Share">Send</button></button-view-model><button-view-model id="fs-ask"><button aria-label="Ask">✧</button></button-view-model></yt-player-quick-action-buttons>`));
+  await expect(page.locator('#fs-ask')).toBeHidden();
+  await expect(page.getByText('Send', { exact: true })).toBeVisible();
   for (const selector of ['ytd-yoodle-renderer', '[aria-label="Ask YouTube"]', '[aria-label="Ask about this video"]'])
     await expect(page.locator(selector)).toBeHidden();
   for (const text of ['YouTube', 'Search', 'Share', 'Save'])
