@@ -20,7 +20,8 @@
         "hide-shorts.css"
       ],
       "js": [
-        "navigation.js"
+        "navigation.js",
+        "subscriptions.js"
       ],
       "run_at": "document_start"
     }

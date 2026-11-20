@@ -5,7 +5,8 @@
 **Less scrolling. More subscriptions.**
 
 A tiny Manifest V3 Chrome extension for desktop YouTube:
-- Home (including the YouTube logo) redirects to Subscriptions.
+- Home (including the YouTube logo) redirects to Subscriptions; Home sidebar entries are hidden.
+- The English “Most relevant” shelf on Subscriptions is hidden, leaving the chronological feed.
 - Shorts shelves, cards, sidebar entries, and linked channel tabs are hidden.
 - Direct Shorts video links open in the standard player; timestamps are preserved.
 - No settings, analytics, storage, backend, remote code, or background worker.
@@ -49,8 +50,10 @@ uv run --no-project scripts/icons.py
 ## Scope and maintenance
 
 YouTube regularly changes its HTML and experiments with different layouts.
-Selectors are structural, not English-text based, and CSS handles lazy-loaded
-content without polling or scanning the DOM. New layouts can need new selectors.
+Shorts selectors are structural, not English-text based, and CSS handles lazy-loaded
+Shorts. A batched DOM observer identifies the English “Most relevant” shelf by its
+heading, only on Subscriptions. Other interface languages are not yet supported
+for that shelf. New layouts can need new selectors.
 A Short presented solely as a regular watch link without Shorts markup may not
 be detected. Mobile YouTube, embedded players, and the mobile app are not supported.
 

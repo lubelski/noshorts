@@ -1,6 +1,10 @@
 /* Structural selectors avoid English labels and automatically handle lazy content.
    Keep selectors scoped to individual cards: never hide a whole results list
    just because one descendant links to a Short. */
+/* Hide Home in both sidebar sizes; keep the masthead logo usable. */
+ytd-guide-entry-renderer:has(a[href="/"]),
+ytd-mini-guide-entry-renderer:has(a[href="/"]),
+[data-noshorts-relevant],
 ytd-reel-shelf-renderer,
 ytd-reel-item-renderer,
 yt-shorts-lockup-view-model,
