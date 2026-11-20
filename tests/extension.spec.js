@@ -138,6 +138,19 @@ test('Premium logo link shrinks to the play icon', async () => {
   await page.close();
 });
 
+test('two-column watch sidebar scrolls on its own', async () => {
+  const page = await context.newPage();
+  await page.goto('https://www.youtube.com/watch?v=regular');
+  await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
+    <ytd-watch-flexy id="wide"><div id="columns" style="display:flex"><div id="primary"></div><div id="secondary"></div></div></ytd-watch-flexy>
+    <ytd-watch-flexy is-single-column><div id="columns"><div id="secondary" class="narrow"></div></div></ytd-watch-flexy>`));
+  const wide = page.locator('#wide #secondary');
+  await expect(wide).toHaveCSS('position', 'sticky');
+  await expect(wide).toHaveCSS('overflow-y', 'auto');
+  await expect(page.locator('.narrow')).toHaveCSS('position', 'static');
+  await page.close();
+});
+
 for (const [path, target] of [
   ['/?feature=home', '/feed/subscriptions'],
   ['/shorts', '/feed/subscriptions'],
