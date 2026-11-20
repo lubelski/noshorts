@@ -18,11 +18,13 @@
       ],
       "css": [
         "hide-shorts.css",
-        "searchbox.css"
+        "searchbox.css",
+        "watch.css"
       ],
       "js": [
         "navigation.js",
-        "subscriptions.js"
+        "subscriptions.js",
+        "watch.js"
       ],
       "run_at": "document_start"
     }
