@@ -34,3 +34,16 @@ html[dark] .noshorts-related-toggle {
 html[dark] .noshorts-related-toggle:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
+/* Two-column layout: the sidebar sticks under the masthead and scrolls on
+   its own, so reading related videos does not move the player. */
+ytd-watch-flexy:not([is-single-column]) #secondary {
+  position: sticky !important;
+  top: 56px;
+  align-self: flex-start;
+  box-sizing: border-box;
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
