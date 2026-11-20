@@ -1,0 +1,37 @@
+/* Prefer structural selectors; sidebar labels cover entries without hrefs.
+   CSS automatically handles lazy content.
+   Keep selectors scoped to individual cards: never hide a whole results list
+   just because one descendant links to a Short. */
+/* Hide Home in both sidebar sizes; keep the masthead logo usable. */
+ytd-guide-entry-renderer:has(a[href="/"]),
+ytd-mini-guide-entry-renderer:has(a[href="/"]),
+/* Expanded guide experiments can use a click handler instead of an href. */
+ytd-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-guide-entry-renderer:has(a[aria-label="Shorts"]),
+ytd-guide-entry-renderer:has(yt-formatted-string[title="Shorts"]),
+ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-mini-guide-entry-renderer:has(a[aria-label="Shorts"]),
+ytd-guide-entry-renderer:has(a[href^="/shorts?"]),
+ytd-mini-guide-entry-renderer:has(a[href^="/shorts?"]),
+[data-noshorts-relevant],
+ytd-reel-shelf-renderer,
+ytd-reel-item-renderer,
+yt-shorts-lockup-view-model,
+ytm-shorts-lockup-view-model,
+ytm-shorts-lockup-view-model-v2,
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+ytd-guide-entry-renderer:has(a[href="/shorts/"]),
+ytd-mini-guide-entry-renderer:has(a[href="/shorts/"]),
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+ytd-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+ytd-grid-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+ytd-compact-video-renderer:has(a#thumbnail[href^="/shorts/"]),
+ytd-guide-entry-renderer:has(a[href="/shorts"]),
+ytd-mini-guide-entry-renderer:has(a[href="/shorts"]),
+yt-tab-shape:has(a[href$="/shorts"]),
+yt-tab-shape:has(a[href$="/shorts/"]) {
+  display: none !important;
+}
