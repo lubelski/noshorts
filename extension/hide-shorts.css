@@ -45,3 +45,8 @@ yt-tab-shape:has(a[href$="/shorts"]),
 yt-tab-shape:has(a[href$="/shorts/"]) {
   display: none !important;
 }
+
+/* Video cards: keep the hover highlight but drop its grow-in scale. */
+yt-lockup-view-model .ytSpecTouchFeedbackShapeHoverEffect {
+  transform: none !important;
+}
