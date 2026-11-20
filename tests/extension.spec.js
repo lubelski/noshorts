@@ -69,22 +69,25 @@ test('hides the masthead Create, Notifications, and voice buttons but keeps the 
   await page.close();
 });
 
-test('focused header search box keeps its unfocused size and drops the spyglass', async () => {
+test('focused header search box keeps its unfocused look and drops the spyglass and scrim', async () => {
   const page = await context.newPage();
   await page.goto('https://www.youtube.com/feed/subscriptions');
   await page.locator('main').evaluate(el => el.insertAdjacentHTML('beforeend', `
     <style>.ytSearchboxComponentInputContainerIsFocused { height: 100px; border-radius: 24px; }</style>
     <ytd-masthead unified-searchbox-open><div id="center">
-      <yt-searchbox class="ytSearchboxComponentHost ytSearchboxComponentHostIsFocused ytSearchboxComponentHostDark">
-        <div class="ytSearchboxComponentInputWrapper"><div id="pill" class="ytSearchboxComponentInputContainer ytSearchboxComponentInputContainerIsFocused">
+      <yt-searchbox class="ytSearchboxComponentHost ytSearchboxComponentHostIsFocused ytSearchboxComponentHostDark ytSearchboxComponentHostNoSuggestions">
+        <div id="wrapper" class="ytSearchboxComponentInputWrapper" style="background: rgb(40, 40, 40)"><div id="pill" class="ytSearchboxComponentInputContainer ytSearchboxComponentInputContainerIsFocused">
           <div id="spyglass" class="ytSearchboxComponentInnerSearchIcon">Q</div>
           <div class="ytSearchboxComponentInputBox"><textarea></textarea></div>
         </div></div>
-      </yt-searchbox></div></ytd-masthead>`));
+      </yt-searchbox></div></ytd-masthead>
+    <div id="scrim" class="ytSearchboxComponentScrimContainer">dim</div>`));
   await expect(page.locator('#spyglass')).toBeHidden();
   await expect(page.locator('#pill')).toHaveCSS('height', '48px');
   await expect(page.locator('#pill')).toHaveCSS('border-radius', '40px');
   await expect(page.locator('#pill')).toHaveCSS('background-color', 'rgb(18, 18, 18)');
+  await expect(page.locator('#wrapper')).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+  await expect(page.locator('#scrim')).toBeHidden();
   await page.close();
 });
 

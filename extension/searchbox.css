@@ -60,3 +60,21 @@ ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponen
 ytd-masthead yt-searchbox .ytSearchboxComponentInnerSearchIcon {
   display: none !important;
 }
+
+/* No focus tint: the wrapper turns gray behind the pill on focus. Keep it
+   clear until suggestions open, since it also backs the suggestions list. */
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused.ytSearchboxComponentHostNoSuggestions .ytSearchboxComponentInputWrapper {
+  background: transparent !important;
+}
+/* The Search button is disabled while the box is empty, which dims its icon.
+   Keep the unfocused icon color. */
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused .ytSearchboxComponentActions button[aria-label="Search"] {
+  color: rgb(15, 15, 15) !important;
+}
+ytd-masthead yt-searchbox.ytSearchboxComponentHostIsFocused.ytSearchboxComponentHostDark .ytSearchboxComponentActions button[aria-label="Search"] {
+  color: rgb(241, 241, 241) !important;
+}
+/* No page-darkening scrim behind the focused box. */
+.ytSearchboxComponentScrimContainer {
+  display: none !important;
+}
