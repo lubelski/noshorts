@@ -5,7 +5,7 @@ Name: NoShorts
 Summary: Less scrolling, more subscriptions. Hide YouTube Shorts and make Home open Subscriptions.
 
 Description:
-NoShorts does two small things: hides Shorts and makes YouTube Home take you straight to your subscriptions. Direct Shorts links open in the regular video player. No settings to fiddle with. No analytics. No data collection. Just a little badger in a jacket helping you skip the endless scroll.
+NoShorts does two small things: hides Shorts and makes YouTube Home take you straight to your subscriptions. Direct Shorts links open in the regular video player. No settings to fiddle with. No analytics. No data collection. Just a capybara in a Hawaiian shirt helping you skip the endless scroll.
 
 Works on desktop YouTube. A YouTube sign-in is needed for subscriptions. Not affiliated with or endorsed by YouTube or Google.
 

@@ -1,51 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<title>NoShorts — a cheerful badger in a teal jacket, in three-quarter view</title>
-<rect width="512" height="512" rx="120" fill="#fff0d7"/>
-<ellipse cx="258" cy="454" rx="111" ry="13" fill="#e4d5bb"/>
-<g stroke="#283337" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
-<!-- Turned body, bare furry legs, oversized little feet. -->
-<path d="M193 363 187 421Q163 425 165 444Q185 460 225 448L239 376" fill="#9a9e96"/>
-<path d="M265 370 277 425Q310 421 321 440Q321 457 277 455L253 441 245 379" fill="#b5b8ad"/>
-<path d="m183 440 1 8m18-8 1 8m80-6 2 9m17-10 2 8" fill="none" stroke-width="5"/>
-<!-- Far arm, smaller and behind the body. -->
-<path d="M294 257Q340 263 350 325L327 337 302 299" fill="#23686b"/>
-<path d="M348 319Q372 320 368 337L354 352Q339 354 329 335" fill="#9a9e96"/>
-<!-- Jacket is asymmetrical, with its opening off-center. -->
-<path d="M192 253Q237 235 294 252L324 385Q289 404 262 382Q223 408 172 385Z" fill="#287f82"/>
-<path d="M226 254 267 316 285 251" fill="#fff4dd"/>
-<path d="m219 252-18 35 30 8-9 25 42 63 35-63-16-25 25-13-17-29" fill="none" stroke-width="8"/>
-<path d="m266 321-2 57" fill="none" stroke-width="7"/>
-<circle cx="276" cy="346" r="6" fill="#edc578" stroke="none"/>
-<!-- Near sleeve and paw: a relaxed hand on the hip. -->
-<path d="M192 261Q158 256 142 296L133 333Q147 349 173 337L190 304" fill="#328f8e"/>
-<path d="M136 330Q126 351 145 364Q166 375 185 352L174 334Q158 344 152 332" fill="#b5b8ad"/>
-<path d="m151 351 9 5m0-15 11 6" fill="none" stroke-width="5"/>
-<!-- Rounded ears, NOT pig ears. Far ear sits higher and smaller. -->
-<path d="M282 108Q287 63 313 69Q343 76 329 119" fill="#777e79"/>
-<path d="M302 99Q305 85 315 88" fill="none" stroke="#d6d2bf" stroke-width="10"/>
-<path d="M155 139Q118 113 130 88Q147 62 178 88L192 119" fill="#777e79"/>
-<path d="M152 115Q137 96 151 94L169 110" fill="#d6d2bf" stroke="none"/>
-<!-- Broad near cheek, narrow far cheek and rightward muzzle establish 3/4 view. -->
-<path d="M151 133Q173 95 235 95Q296 91 323 133Q340 157 338 180L357 211Q367 248 324 267Q280 296 220 282Q162 278 139 238L149 231 134 215 146 209Q127 172 151 133Z" fill="#f5efda"/>
-<!-- The badger's two characteristic eye stripes; near stripe is wider. -->
-<path d="M172 117Q195 99 219 100Q197 139 213 167Q227 198 206 238L194 260Q163 249 153 225Q180 201 165 168Q156 142 172 117Z" fill="#364348" stroke="none"/>
-<path d="M279 103Q302 107 316 128Q310 150 327 172L341 202Q332 218 314 217Q288 196 291 166Q297 140 279 103Z" fill="#364348" stroke="none"/>
-<!-- Friendly eyes following the viewer, at unequal widths. -->
-<ellipse cx="201" cy="176" rx="22" ry="28" fill="#fffaf0" stroke-width="6"/>
-<ellipse cx="307" cy="169" rx="16" ry="24" fill="#fffaf0" stroke-width="6"/>
-<ellipse cx="208" cy="180" rx="10" ry="17" fill="#283337" stroke="none"/>
-<ellipse cx="311" cy="173" rx="8" ry="15" fill="#283337" stroke="none"/>
-<circle cx="211" cy="174" r="4" fill="#fffaf0" stroke="none"/>
-<circle cx="313" cy="167" r="3" fill="#fffaf0" stroke="none"/>
-<path d="M182 142q13-11 26-4m88-8q10-7 19 3" fill="none" stroke-width="7"/>
-<!-- Cream muzzle, black triangular nose, cheeky smile. -->
-<path d="M235 216Q255 197 292 201Q327 202 345 218Q346 248 312 258Q273 276 234 251" fill="#fff5e2" stroke="none"/>
-<path d="M291 206Q317 194 338 209Q340 222 319 233Q301 230 291 216Z" fill="#283337" stroke-width="6"/>
-<path d="m308 207 13-1" fill="none" stroke="#7c8989" stroke-width="5"/>
-<path d="M319 234Q289 270 253 241" fill="none" stroke-width="7"/>
-<path d="m244 239 12-4" fill="none" stroke-width="6"/>
-<path d="m155 211-14 2m20 11-14 7" fill="none" stroke="#77807b" stroke-width="5"/>
-<!-- A small, swept tuft rather than a pig's curly forelock. -->
-<path d="M219 98 228 78 239 92 253 76 258 96" fill="#f5efda" stroke-width="8"/>
-</g>
-</svg>
+<title>NoShorts — a capybara on vacation</title>
+<defs><g id="flower" fill="#fff1cf"><ellipse cy="-10" rx="6" ry="10"/><ellipse cy="-10" rx="6" ry="10" transform="rotate(72)"/><ellipse cy="-10" rx="6" ry="10" transform="rotate(144)"/><ellipse cy="-10" rx="6" ry="10" transform="rotate(216)"/><ellipse cy="-10" rx="6" ry="10" transform="rotate(288)"/><circle r="4" fill="#dc9855"/></g></defs>
+<rect width="512" height="512" rx="115" fill="#fff0d7"/><ellipse cx="259" cy="451" rx="112" ry="13" fill="#e8d5b3"/>
+<g stroke="#44352e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+<!-- Bare legs and broad, flat toes. -->
+<path fill="#ae7851" d="M204 363l-12 66q-23 5-19 19 18 12 54 0l15-74m28-5 6 70q12 19 54 10 5-14-24-22l-2-54"/>
+<path fill="none" stroke-width="4" d="m189 441-4 9m19-10-3 11m94-10 4 10m11-11 5 9"/>
+<path fill="#bd875c" d="M190 261q40-33 108-12 38 50 28 134-29 33-100 15-54-17-36-137Z"/>
+<path fill="#e1b183" stroke="none" d="M258 287q40-14 54 61 7 42-33 44-36-1-36-45Z"/>
+<!-- Open camp shirt with a pointed collar and rolled short sleeves. -->
+<path fill="#347f7f" d="M291 248q44-9 72 58l-22 24-31-23 13 67-20-2q7-71-15-98Z"/>
+<path fill="#ab7651" d="m344 317 16-12q19 20 7 37-15 15-29-8Z"/>
+<path fill="#32908b" d="M195 242q-41 7-60 67l35 21 12-14-10 62q31 21 70 10l20-120Z"/>
+<path fill="#ba855a" d="m142 313 28 15q-3 32-17 33-24 0-11-48Z"/>
+<path fill="#54a59a" d="m201 249 32-10 29 29-20 39-14-23-20 3Zm82 3 17-4 16 26-12 1-1 19Z"/>
+<use href="#flower" transform="translate(205 337)"/><use href="#flower" transform="translate(160 295) scale(.59)"/>
+<!-- Tiny rounded ears set high; a broad, blunt muzzle turns to the right. -->
+<path fill="#a97047" d="M261 113q-3-42 19-43 21 2 14 40Z"/>
+<path fill="#c79260" d="M154 142q17-39 60-46 57-11 91 21 16 16 31 35 12 13 37 26 21 13 20 39 1 32-28 45-32 15-78 12-65 10-109-16-42-24-38-73 0-23 14-43Z"/>
+<path fill="#af794f" d="M170 138q-26-15-19-42 5-22 23-18 22 6 22 39"/>
+<path fill="none" stroke="#785034" stroke-width="8" d="M169 99q9 0 11 15"/>
+<path fill="#dbab79" stroke="none" d="M275 177q26-19 64-7 38 13 45 34 5 28-20 44-24 17-70 12-36-7-38-33-2-29 19-50Z"/>
+<!-- Heavy lids and low-set smile: an unhurried expression. -->
+<path fill="#fff2d9" stroke-width="6" d="M206 157q17-5 39-1-5 20-20 19-15-1-19-18Zm87-12q10-4 23-1-1 14-10 16-10 1-13-15Z"/>
+<path fill="#44352e" stroke="none" d="M225 156h13q-2 13-9 13-6 0-4-13Zm78-11h9q1 9-5 10-5 0-4-10Z"/>
+<path fill="none" stroke-width="5" d="m210 141 23-3m60-6 11-1"/>
+<path fill="#684932" stroke="none" d="M347 181q7-7 16-2 6 6-2 13-8 4-13-2Zm25 10q6-3 10 4 3 6-3 9-7 0-7-13Z"/>
+<path fill="none" stroke-width="6" d="M374 224q-21 19-51 9-8-2-12-8"/>
+<g fill="#96683f" stroke="none"><circle cx="311" cy="204" r="3"/><circle cx="322" cy="212" r="3"/><circle cx="301" cy="213" r="3"/></g>
+</g></svg>
