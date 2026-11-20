@@ -1,6 +1,6 @@
 # NoShorts
 
-<img src="assets/mascot.png" width="192" alt="A cheerful pig wearing a teal jacket and no shorts">
+<img src="assets/mascot.png" width="192" alt="A cheerful badger in three-quarter view wearing a teal jacket and no shorts">
 
 **Less scrolling. More subscriptions.**
 

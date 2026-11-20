@@ -1,27 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<title>NoShorts — a cheerful pig in a teal jacket</title>
+<title>NoShorts — a cheerful badger in a teal jacket, in three-quarter view</title>
 <rect width="512" height="512" rx="120" fill="#fff0d7"/>
-<g stroke="#302c3b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-<!-- Bare little legs: jacket, but no shorts. -->
-<path d="M203 377 193 438Q207 455 236 441L247 381M268 381 276 441Q302 455 320 437L307 374" fill="#f6a6a4"/>
-<path d="M191 437Q211 426 237 438L236 452H190ZM275 438Q301 426 322 437L324 452H276Z" fill="#302c3b"/>
-<path d="M191 258Q139 271 123 342L158 357 189 313M320 258Q367 272 387 340L354 358 323 313" fill="#287f82"/>
-<path d="M123 337Q97 343 113 366 130 381 152 356M387 337Q411 341 399 363 384 382 360 357" fill="#f6a6a4"/>
-<path d="M192 253Q253 235 320 253L339 386Q292 411 254 386 212 411 174 385Z" fill="#287f82"/>
-<path d="M219 255 254 321 288 255" fill="#fff0d7"/>
-<path d="m207 252-15 40 34 4-9 27 37 60 39-60-9-27 34-4-17-40" fill="none"/>
-<!-- Large ears, round face, and a distinctive curled forelock. -->
-<path d="M164 160Q112 83 151 74 198 77 214 129M302 125Q335 64 366 80 397 106 346 167" fill="#f6a6a4"/>
-<path d="m163 113 22 37m156-34-18 36" fill="none" stroke="#d87783"/>
-<ellipse cx="255" cy="191" rx="111" ry="96" fill="#f6a6a4"/>
-<path d="M239 102Q224 67 253 65 283 64 273 88 267 100 257 87" fill="#f6a6a4"/>
-<ellipse cx="218" cy="179" rx="17" ry="25" fill="#fffaf0" stroke="none"/>
-<ellipse cx="292" cy="179" rx="17" ry="25" fill="#fffaf0" stroke="none"/>
-<ellipse cx="223" cy="184" rx="8" ry="15" fill="#302c3b" stroke="none"/>
-<ellipse cx="287" cy="184" rx="8" ry="15" fill="#302c3b" stroke="none"/>
-<path d="M212 229Q251 269 299 228" fill="#fffaf0"/>
-<ellipse cx="255" cy="212" rx="39" ry="26" fill="#f8b8b0" stroke-width="9"/>
-<path d="M241 209v8m28-8v8" stroke-width="8"/>
-<path d="m199 148 20-5m73 0 20 5" fill="none" stroke-width="8"/>
-<circle cx="254" cy="354" r="6" fill="#f6cd70" stroke="none"/>
-</g></svg>
+<ellipse cx="258" cy="454" rx="111" ry="13" fill="#e4d5bb"/>
+<g stroke="#283337" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+<!-- Turned body, bare furry legs, oversized little feet. -->
+<path d="M193 363 187 421Q163 425 165 444Q185 460 225 448L239 376" fill="#9a9e96"/>
+<path d="M265 370 277 425Q310 421 321 440Q321 457 277 455L253 441 245 379" fill="#b5b8ad"/>
+<path d="m183 440 1 8m18-8 1 8m80-6 2 9m17-10 2 8" fill="none" stroke-width="5"/>
+<!-- Far arm, smaller and behind the body. -->
+<path d="M294 257Q340 263 350 325L327 337 302 299" fill="#23686b"/>
+<path d="M348 319Q372 320 368 337L354 352Q339 354 329 335" fill="#9a9e96"/>
+<!-- Jacket is asymmetrical, with its opening off-center. -->
+<path d="M192 253Q237 235 294 252L324 385Q289 404 262 382Q223 408 172 385Z" fill="#287f82"/>
+<path d="M226 254 267 316 285 251" fill="#fff4dd"/>
+<path d="m219 252-18 35 30 8-9 25 42 63 35-63-16-25 25-13-17-29" fill="none" stroke-width="8"/>
+<path d="m266 321-2 57" fill="none" stroke-width="7"/>
+<circle cx="276" cy="346" r="6" fill="#edc578" stroke="none"/>
+<!-- Near sleeve and paw: a relaxed hand on the hip. -->
+<path d="M192 261Q158 256 142 296L133 333Q147 349 173 337L190 304" fill="#328f8e"/>
+<path d="M136 330Q126 351 145 364Q166 375 185 352L174 334Q158 344 152 332" fill="#b5b8ad"/>
+<path d="m151 351 9 5m0-15 11 6" fill="none" stroke-width="5"/>
+<!-- Rounded ears, NOT pig ears. Far ear sits higher and smaller. -->
+<path d="M282 108Q287 63 313 69Q343 76 329 119" fill="#777e79"/>
+<path d="M302 99Q305 85 315 88" fill="none" stroke="#d6d2bf" stroke-width="10"/>
+<path d="M155 139Q118 113 130 88Q147 62 178 88L192 119" fill="#777e79"/>
+<path d="M152 115Q137 96 151 94L169 110" fill="#d6d2bf" stroke="none"/>
+<!-- Broad near cheek, narrow far cheek and rightward muzzle establish 3/4 view. -->
+<path d="M151 133Q173 95 235 95Q296 91 323 133Q340 157 338 180L357 211Q367 248 324 267Q280 296 220 282Q162 278 139 238L149 231 134 215 146 209Q127 172 151 133Z" fill="#f5efda"/>
+<!-- The badger's two characteristic eye stripes; near stripe is wider. -->
+<path d="M172 117Q195 99 219 100Q197 139 213 167Q227 198 206 238L194 260Q163 249 153 225Q180 201 165 168Q156 142 172 117Z" fill="#364348" stroke="none"/>
+<path d="M279 103Q302 107 316 128Q310 150 327 172L341 202Q332 218 314 217Q288 196 291 166Q297 140 279 103Z" fill="#364348" stroke="none"/>
+<!-- Friendly eyes following the viewer, at unequal widths. -->
+<ellipse cx="201" cy="176" rx="22" ry="28" fill="#fffaf0" stroke-width="6"/>
+<ellipse cx="307" cy="169" rx="16" ry="24" fill="#fffaf0" stroke-width="6"/>
+<ellipse cx="208" cy="180" rx="10" ry="17" fill="#283337" stroke="none"/>
+<ellipse cx="311" cy="173" rx="8" ry="15" fill="#283337" stroke="none"/>
+<circle cx="211" cy="174" r="4" fill="#fffaf0" stroke="none"/>
+<circle cx="313" cy="167" r="3" fill="#fffaf0" stroke="none"/>
+<path d="M182 142q13-11 26-4m88-8q10-7 19 3" fill="none" stroke-width="7"/>
+<!-- Cream muzzle, black triangular nose, cheeky smile. -->
+<path d="M235 216Q255 197 292 201Q327 202 345 218Q346 248 312 258Q273 276 234 251" fill="#fff5e2" stroke="none"/>
+<path d="M291 206Q317 194 338 209Q340 222 319 233Q301 230 291 216Z" fill="#283337" stroke-width="6"/>
+<path d="m308 207 13-1" fill="none" stroke="#7c8989" stroke-width="5"/>
+<path d="M319 234Q289 270 253 241" fill="none" stroke-width="7"/>
+<path d="m244 239 12-4" fill="none" stroke-width="6"/>
+<path d="m155 211-14 2m20 11-14 7" fill="none" stroke="#77807b" stroke-width="5"/>
+<!-- A small, swept tuft rather than a pig's curly forelock. -->
+<path d="M219 98 228 78 239 92 253 76 258 96" fill="#f5efda" stroke-width="8"/>
+</g>
+</svg>
